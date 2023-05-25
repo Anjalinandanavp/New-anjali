@@ -1,0 +1,548 @@
+//main
+
+import 'package:alertmessage/Task2/form1.dart';
+import 'package:alertmessage/Task2/forms2.dart';
+import 'package:alertmessage/Task2/forms3.dart';
+import 'package:alertmessage/Task2/forms4.dart';
+
+
+import 'package:flutter/material.dart';
+
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Mytrials',
+      theme: ThemeData(
+
+
+        primarySwatch: Colors.red,
+
+      ),
+
+      home: const QForm()
+
+
+    );
+  }
+}
+
+
+
+//task1
+
+
+
+import 'package:flutter/material.dart';
+
+class MyForms extends StatefulWidget {
+
+  const MyForms({Key? key}) : super(key: key);
+
+  @override
+
+  State<MyForms> createState() => _MyFormsState();
+
+}
+
+class _MyFormsState extends State<MyForms> {
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+        appBar: AppBar(
+
+          title: Text("Form Demo"),
+
+          backgroundColor: Colors.teal,
+
+        ),
+
+        body: Column(
+
+          children: [
+
+            Padding(
+
+              padding: const EdgeInsets.all(10),
+
+              child: TextFormField(
+
+                maxLength: 10,
+
+                decoration: InputDecoration(
+
+                  hintText: "Name",
+
+                ),
+
+              ),
+
+            ),
+
+            Padding(
+
+              padding: const EdgeInsets.all(10),
+
+              child: TextFormField(
+
+                decoration: InputDecoration(
+
+                  hintText: "Email",
+
+                ),
+
+              ),
+
+            ),
+
+            Padding(
+
+              padding: const EdgeInsets.all(10),
+
+              child: TextFormField(
+
+                decoration: InputDecoration(
+
+                  hintText: "Password",
+
+                ),
+
+              ),
+
+            ),
+
+            Padding(
+
+              padding: const EdgeInsets.all(10),
+
+              child: TextFormField(
+
+                decoration: InputDecoration(
+
+                  hintText: "Url",
+
+                ),
+
+              ),
+
+            ),
+
+            Padding(
+
+              padding: const EdgeInsets.all(10),
+
+              child: TextFormField(
+
+                decoration: InputDecoration(
+
+                  hintText: "Phone number",
+
+                ),
+
+              ),
+
+            ),
+
+            Padding(
+
+              padding: const EdgeInsets.all(10),
+
+              child: TextFormField(
+
+                decoration: InputDecoration(
+
+                  hintText: "Calories",
+
+                ),
+
+              ),
+
+            ),
+
+            Padding(
+
+              padding: const EdgeInsets.all(8.0),
+
+              child: SizedBox(
+
+                width: 100,
+
+                height: 40,
+
+                child: ElevatedButton(onPressed: () {},
+
+                    child: Text("Submit",style: TextStyle(color: Colors.blue),),
+
+                    style:ButtonStyle(
+
+                      backgroundColor:MaterialStateProperty.all(Colors.white54),
+
+                    )
+
+                ),
+
+              ),
+
+            ),
+
+          ],
+
+        )
+
+    );
+
+  }
+
+}
+
+//task 2
+import 'package:alertmessage/Task2/regpage.dart';
+import 'package:flutter/material.dart';
+class Mforms extends StatefulWidget {
+  const Mforms({Key? key}) : super(key: key);
+
+  @override
+  State<Mforms> createState() => _MformsState();
+}
+
+class _MformsState extends State<Mforms> {
+  @override
+  OutlineInputBorder myinputborder(){ //return type is OutlineInputBorder
+    return OutlineInputBorder( //Outline border type for TextFeild
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        borderSide: BorderSide(
+          color:Colors.red,
+          width: 3,
+        )
+
+    );
+  }
+
+  OutlineInputBorder myfocusborder(){
+    return OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        borderSide: BorderSide(
+          color:Colors.red,
+          width: 3,
+        )
+    );
+  }
+
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("Login")),
+        backgroundColor: Colors.red,
+      ),
+      body: Column(
+        children: [
+          Center(child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Text("Register Form",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
+          )),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextFormField(
+
+
+              decoration: InputDecoration(
+
+
+                  label: Text(
+                    "Name",style: TextStyle(fontSize:15,color: Colors.black),
+
+                  ),
+                  hintText: "Enter Your Name",
+                  hintStyle: TextStyle(fontSize: 10)),
+
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextFormField(
+
+                decoration: InputDecoration(
+
+                  prefixIcon: Icon(Icons.contact_mail),
+                  labelText: "Enter Your Email",
+                  labelStyle: TextStyle(
+                    color: Colors.red, //<-- SEE HERE
+                  ),
+                 border: OutlineInputBorder(
+                     borderSide: BorderSide(
+                       color:Colors.red,
+                       width: 3,
+                     )
+
+                 )
+                )
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.mail),
+                  border:OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  label: Text(
+                      "email"
+                  ),
+                  hintText: "Email"
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextFormField(
+              decoration: InputDecoration(
+                label: Text("Password"),
+                prefixIcon: Icon(Icons.security),
+                border: OutlineInputBorder(
+                ),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 1200,
+              height: 40,
+              child: ElevatedButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()),);
+              },
+
+                  child: Text("Register",style: TextStyle(color: Colors.white),),
+                  style:ButtonStyle(
+                    backgroundColor:MaterialStateProperty.all(Colors.blue),
+                  )
+              ),
+            ),
+          ),
+
+
+        ],
+
+      ),
+
+    );
+
+  }
+
+}
+//task3
+
+
+import 'package:alertmessage/Task2/login.dart';
+import 'package:alertmessage/Task2/regpage.dart';
+import 'package:flutter/material.dart';
+
+class QForm extends StatefulWidget {
+  const QForm({Key? key}) : super(key: key);
+
+  @override
+  State<QForm> createState() => _QFormState();
+}
+
+class _QFormState extends State<QForm> {
+  bool showpassword=true;
+  @override
+  void togglepassword()
+  {
+    setState(() {
+      showpassword=!showpassword;
+
+    });
+  }
+  var fnameController=TextEditingController();
+  var emailController=TextEditingController();
+  var passwordController=TextEditingController();
+  var fname='',email='',password='';
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+
+            child: Text("Create Account",style: TextStyle(fontSize: 25,color: Colors.black),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()),);
+
+                },  child:  Padding(
+                  padding: const EdgeInsets.all(8.0),
+
+                  child: Text("Enter Your Name , Email And Password For Sign Up."),
+
+                ),),
+
+
+
+                TextButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  LoginPage()),);
+
+
+                },
+                    child: Text("Already Have Account ?", style: TextStyle(color: Colors.green),
+                    )
+
+                )
+
+              ],
+            ),
+          ),
+          Padding(
+            padding:const EdgeInsets.all(10.0),
+            child: TextField(
+              controller: fnameController,
+              decoration: InputDecoration(
+                  border:OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  contentPadding:EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                  label: Text(
+                    "Full Name",style: TextStyle(fontSize:15),
+
+                  )
+
+              ),
+            ),
+          ),
+          Padding(
+            padding:const EdgeInsets.all(10.0),
+            child: TextField(
+              controller: emailController,
+              decoration: InputDecoration(
+                  border:OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  contentPadding:EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                  label: Text(
+                      "Email Address"
+                  )
+              ),
+            ),
+          ),
+          Padding(
+            padding:const EdgeInsets.all(10.0),
+            child: TextField(
+              controller: passwordController,
+              obscureText: showpassword,
+              decoration: InputDecoration(
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      togglepassword();
+
+                    },
+                    child:showpassword?Icon (Icons.visibility):Icon(Icons.visibility_off),
+                  ),
+                  border:OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  contentPadding:EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                  label: Text(
+                      "Password"
+                  )
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 1200,
+              height: 40,
+              child: ElevatedButton(onPressed: () {},
+
+                  child: Text("SIGN UP",style: TextStyle(color: Colors.white),),
+                  style:ButtonStyle(
+                    backgroundColor:MaterialStateProperty.all(Colors.green),
+                  )
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 260,
+              child: Text("By Signing up you agree to our Terms Conditions & Privacy Policy",
+                style: TextStyle(color: Colors.black45),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+
+            child: Center(child: Text("Or",style: TextStyle(fontSize: 20,color: Colors.black),)),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 1200,
+              height: 40,
+
+              child: ElevatedButton.icon(
+                icon: const Icon(
+                  Icons.facebook_outlined,
+                  color: Colors.white,
+                  size: 24.0,
+                ),
+                label: const Text("CONNECT WITH FACEBOOK",style: TextStyle(color: Colors.white),),
+                style:ButtonStyle(
+                  backgroundColor:MaterialStateProperty.all(Color.fromRGBO(66, 103, 178, 8)),
+                ),
+                onPressed: () {},
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 1200,
+              height: 40,
+
+              child: ElevatedButton.icon(
+                icon: Image.network(
+    'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'),
+                label: const Text("CONNECT WITH GOOGLE",style: TextStyle(color: Colors.white),),
+                style:ButtonStyle(
+                  backgroundColor:MaterialStateProperty.all(Colors.blue),
+                ),
+                onPressed: () {},
+              ),
+            ),
+          )
+
+        ],
+
+      ),
+    );
+  }
+}
